@@ -7,12 +7,12 @@ const bcrypt = require("bcryptjs");
 
 
 const register = (req, res) => {
+    console.log(req.body);
     const user = new User({
         username: req.body.username,
         email: req.body.email,
         password: bcrypt.hashSync(req.body.password, 8),
     });
-
     user.save((err, user) => {
         if (err) {
             res.status(500).send({ message: err });
@@ -62,6 +62,7 @@ const login = (req, res) => {
                 id: user._id,
                 username: user.username,
                 email: user.email,
+                token: token
             });
         });
 };

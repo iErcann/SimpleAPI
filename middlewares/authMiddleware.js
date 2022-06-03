@@ -4,7 +4,9 @@ const db = require("../models");
 
 
 const verifyToken = (req, res, next) => {
-  let token = req.session.token;
+  let token = req.header('authorization').split(" ")[1];
+  console.log(req.header('authorization'));
+  //let token = req.session.token;
   if (!token) {
     return res.status(403).send({ message: "No token provided!" });
   }
