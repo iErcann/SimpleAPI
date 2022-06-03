@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import {  useState } from 'react';
 import {
     Input, Box, Button, useToast
 } from '@chakra-ui/react';
@@ -24,9 +24,7 @@ export default function Register() {
 
         const response = await fetch('http://localhost:8080/register', requestOptions);
         const json = await response.json();
-        console.log(json);
         if (!response.ok) {
-            console.log(response.json())
             toast({
                 title: 'Error.',
                 description: await json.message,

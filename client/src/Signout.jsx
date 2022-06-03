@@ -1,6 +1,5 @@
-import { useRef, useState } from 'react';
 import {
-    Input, Box, Button, useToast
+    Box, Button
 } from '@chakra-ui/react';
 import { useCookies } from 'react-cookie';
 
@@ -21,7 +20,7 @@ export default function Signout() {
     };
 
     return (
-        <Box w={[300, 400, 500]} p={4}  shadow='md' borderWidth='1px' >
+        <Box w={[300, 400, 500]} p={4} shadow='md' borderWidth='1px' >
             <h2>
                 Signout
             </h2>

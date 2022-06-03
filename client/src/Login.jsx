@@ -1,6 +1,6 @@
-import { useRef, useState } from 'react';
+import {  useState } from 'react';
 import {
-    Input, Box, Button, useToast, useColorModeValue, AlertIcon, AlertTitle, AlertDescription, Alert
+    Input, Box, Button, useToast 
 } from '@chakra-ui/react';
 import { useCookies } from 'react-cookie';
 
@@ -33,7 +33,6 @@ export default function Login() {
         const response = await fetch('http://localhost:8080/login', requestOptions);
         const json = await response.json();
         if (!response.ok) {
-            console.log(response.json())
             toast({
                 title: 'Error.',
                 description: await json.message,
